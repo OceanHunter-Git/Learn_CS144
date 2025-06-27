@@ -1,6 +1,8 @@
 #pragma once
 
 #include "byte_stream.hh"
+#include <vector>
+#include <string>
 
 class Reassembler
 {
@@ -43,4 +45,9 @@ public:
 
 private:
   ByteStream output_;
+  std::vector<char> reassembler_ {};
+  std::vector<bool> has_data_ {};
+  uint64_t first_index_ {};
+  bool is_last_substring_ {};
+  uint64_t last_index_ {};
 };
